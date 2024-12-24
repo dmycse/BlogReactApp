@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { menuItems } from "../../constants/constants";
+import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/clerk-react";
 import { LogIn } from "lucide-react";
 
 export const NavigationItems = ({className}) => {
@@ -11,9 +12,19 @@ export const NavigationItems = ({className}) => {
         </li>
       ))}
       <li>
-        <button className="py-2 px-4 flex items-center gap-2 text-white rounded-md bg-purple-400 hover:bg-purple-600">
-          <LogIn /> Login
-        </button>
+        <SignedOut>
+          <Link 
+            to='/login'
+            className="py-2 px-4 flex items-center gap-2 text-white rounded-md bg-purple-400 hover:bg-purple-600"
+          >
+            <LogIn /> Login
+          </Link>
+        </SignedOut>
+      </li>
+      <li>
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
       </li>
     </ul>
   )
