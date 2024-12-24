@@ -7,7 +7,7 @@ export const NavigationItems = ({className}) => {
   return (
     <ul className={className}>
       {menuItems.map(item => (
-        <li key={item.id} className="px-5 py-2 hover:bg-purple-500 hover:text-white rounded-md">
+        <li key={item.id} className="px-5 py-2 hover:bg-purple-500 hover:text-white rounded-lg">
           <Link href={item.url}>{item.title}</Link>
         </li>
       ))}
@@ -15,7 +15,7 @@ export const NavigationItems = ({className}) => {
         <SignedOut>
           <Link 
             to='/login'
-            className="py-2 px-4 flex items-center gap-2 text-white rounded-md bg-purple-400 hover:bg-purple-600"
+            className="py-2 px-4 flex items-center gap-2 text-white rounded-lg bg-purple-400 hover:bg-purple-600"
           >
             <LogIn /> Login
           </Link>
