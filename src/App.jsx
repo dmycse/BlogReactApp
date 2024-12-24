@@ -1,15 +1,12 @@
-import { AppLayout } from "./components/applayout/Layout";
-import { Navbar } from "./components/navbar/Navbar";
-
 const App = () => {
   return (
-    <AppLayout>
-      <Navbar />
+    <>
+      {/* Navbar */}
       {/* Breadcrumbs */}
       {/* Introduction */}
       {/* Fuatered posts */}
       {/* Postlist */}
-    </AppLayout>
+    </>
   )
 }
 
