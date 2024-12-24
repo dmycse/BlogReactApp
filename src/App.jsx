@@ -1,4 +1,4 @@
-import { AppLayout } from "./components/applayout/layout";
+import { AppLayout } from "./components/applayout/Layout";
 import { Navbar } from "./components/navbar/Navbar";
 
 const App = () => {
