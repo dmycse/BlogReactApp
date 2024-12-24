@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { menuItems } from "../../constants/constants";
 import { LogIn } from "lucide-react";
 
@@ -6,7 +7,7 @@ export const NavigationItems = ({className}) => {
     <ul className={className}>
       {menuItems.map(item => (
         <li key={item.id} className="px-5 py-2 hover:bg-purple-500 hover:text-white rounded-md">
-          <a href={item.url}>{item.title}</a>
+          <Link href={item.url}>{item.title}</Link>
         </li>
       ))}
       <li>
