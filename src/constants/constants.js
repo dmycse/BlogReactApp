@@ -53,3 +53,34 @@ export const categories = [
     url: "/posts?cat=marketing",
   },
 ];
+
+export const featuredPosts = [
+  {
+    id: 1,
+    title: "Lorem ipsum dolor sit amet. consectetur adipisicing elit.",
+    category: "Web Design",
+    imageUrl: "/featured1.jpeg",
+    url: "/posts/1"
+  },
+  {
+    id: 2,
+    title: "Lorem ipsum dolor sit amet. consectetur adipisicing elit.",
+    category: "Marketing",
+    imageUrl: "/featured2.jpeg",
+    url: "/posts/2"
+  },
+  {
+    id: 3,
+    title: "Lorem ipsum dolor sit amet. consectetur adipisicing elit.",
+    category: "Development",
+    imageUrl: "/featured3.jpeg",
+    url: "/posts/3"
+  },
+  {
+    id: 4,
+    title: "Lorem ipsum dolor sit amet. consectetur adipisicing elit.",
+    category: "Databases",
+    imageUrl: "/featured4.jpeg",
+    url: "/posts/4"
+  }
+]

@@ -1,5 +1,4 @@
-import React from 'react'
-import { Breadcrumbs, Introduction, MainCategories } from '../sections';
+import { Breadcrumbs, FeaturedPosts, Introduction, MainCategories } from '../sections';
 
 export const Homepage = () => {
   return (
@@ -7,7 +6,7 @@ export const Homepage = () => {
       <Breadcrumbs />
       <Introduction />
       <MainCategories />
-      {/* Fuatered posts */}
+      <FeaturedPosts />
       {/* Postlist */}
     </main>
   )
