@@ -2,7 +2,7 @@ import { useState } from "react";
 import { NavigationItems } from "./NavigationItems";
 import { Menu } from "lucide-react";
 
-export const MobileMenu = ({className}) => {
+export const MobileMenu = () => {
 
   const [openMobileMenu, setOpenMobileMenu] = useState(false);
 
@@ -15,7 +15,7 @@ export const MobileMenu = ({className}) => {
         {openMobileMenu ? "X" : <Menu className="w-8 h-8"/>}
       </button>
       <nav 
-        className={`pt-10 w-full h-screen  
+        className={`pt-10 w-full h-screen bg-purple-200 
                     absolute top-16 ${openMobileMenu ? "right-0" : "-right-[100%]"}
                     transition-all ease-in-out`}
       >
