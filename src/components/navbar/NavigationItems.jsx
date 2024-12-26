@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { menuItems } from "../../constants/constants";
-import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/clerk-react";
+import { SignedIn, SignedOut, UserButton } from "@clerk/clerk-react";
 import { LogIn } from "lucide-react";
 
 export const NavigationItems = ({className}) => {
