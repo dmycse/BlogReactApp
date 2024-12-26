@@ -3,9 +3,9 @@
 export const PostsMenuActions = () => {
   return (
     <div>
-      <h2>Actions</h2>
+      <h2 className="mt-4 mb-2 text-sm font-medium">Actions</h2>
       <div
-        className="py-2 flex items-center gap-2 text-sm cursor-pointer"
+        className="py-1 flex items-center gap-2 text-sm cursor-pointer"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -22,7 +22,7 @@ export const PostsMenuActions = () => {
         <span>Save this Post</span>
       </div>
       <div
-          className="py-2 flex items-center gap-2 text-sm cursor-pointer"
+          className="py-1 flex items-center gap-2 text-sm cursor-pointer"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
