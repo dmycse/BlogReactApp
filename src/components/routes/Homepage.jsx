@@ -1,4 +1,4 @@
-import { Breadcrumbs, FeaturedPosts, Introduction, MainCategories } from '../sections';
+import { Breadcrumbs, FeaturedPosts, Introduction, MainCategories, PostsList } from '../sections';
 
 export const Homepage = () => {
   return (
@@ -7,7 +7,10 @@ export const Homepage = () => {
       <Introduction />
       <MainCategories />
       <FeaturedPosts />
-      {/* Postlist */}
+      <div className="">
+        <h1 className='my-8 text-2xl text-gray-600'>Recent Posts</h1>
+        <PostsList />
+      </div>
     </main>
   )
 }
