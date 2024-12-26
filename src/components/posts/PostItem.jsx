@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Postcrubms } from "./Postcrubms";
 
 export const PostItem = ({item}) => {
   return (
@@ -18,13 +19,7 @@ export const PostItem = ({item}) => {
           className="text-2xl font-semibold">
           {item.title}
         </Link>
-        <div className="flex items-center gap-2 text-sm text-gray-400">
-          <span>Written by</span>
-          <Link to='' className="text-purple-500">{item.author}</Link>
-          <span>on</span>
-          <Link to='' className="text-purple-500">{item.category}</Link>
-          <span>a day ago</span>
-        </div>
+        <Postcrubms author={item.author} category={item.category} time={item.time} />
         <p className="">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi necessitatibus iste nulla distinctio,
            beatae temporibus quaerat vel voluptate rerum, voluptates repellat facere optio doloremque. 
