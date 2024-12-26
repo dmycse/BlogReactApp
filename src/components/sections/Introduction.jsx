@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 export const Introduction = () => {
   return (
     <section className='flex items-center justify-between'>
-      <div className=''>
+      <div>
         <h1 className='text-2xl md:text-5xl lg:text-6xl font-bold text-gray-800'>
           Lorem ipsum dolor sit amet, consectetur adipisicing.
         </h1>
@@ -15,7 +15,7 @@ export const Introduction = () => {
       </div>
       <div>
         <Link to="/write" className='hidden md:block relative'>
-        <svg
+          <svg
             viewBox="0 0 200 200"
             width="200"
             height="200"
@@ -38,8 +38,8 @@ export const Introduction = () => {
           </svg>
           <button 
             className="m-auto w-20 h-20 absolute top-0 left-0 right-0 bottom-0  
-                     bg-purple-600 rounded-full flex items-center justify-center
-                     animate-pulse animatedButton"
+                    bg-purple-600 rounded-full flex items-center justify-center
+                    animate-pulse animatedButton"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
