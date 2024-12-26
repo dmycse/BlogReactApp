@@ -3,7 +3,7 @@ import { Breadcrumbs, FeaturedPosts, Introduction, MainCategories, PostsList } f
 export const Homepage = () => {
   return (
     <main className='mt-4 flex flex-col gap-4'>
-      <Breadcrumbs />
+      <Breadcrumbs tetx='Blogs and Articles' />
       <Introduction />
       <MainCategories />
       <FeaturedPosts />
