@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Breadcrumbs } from "../sections";
 import { Postcrubms, PostsMenuActions } from "../posts";
 import { categories } from "../../constants/constants";
-import { Search } from "../../search";
+import { Search } from "../search";
 import { Comments } from "../comments";
 
 export const SinglePostPage = () => {
