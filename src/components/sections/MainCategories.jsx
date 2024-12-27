@@ -15,7 +15,7 @@ export const MainCategories = () => {
             <Link 
               to={item.url}
               className='px-4'>
-            {item.title}
+            {item.id === 1 ? 'All Posts' : item.title}
           </Link>
           </li>
         ))}
