@@ -24,33 +24,62 @@ export const menuItems = [
 export const categories = [
   {
     id: 1,
-    title: "All Posts",
+    title: 'General',
+    selector: 'general',
     url: "/posts",
   },
   {
     id: 2,
-    title: "Web Design",
+    title: 'Web Design',
+    selector: 'web-design',
     url: "/posts?cat=web-design",
   },
   {
     id: 3,
-    title: "Development",
+    title: 'Development',
+    selector: 'development',
     url: "/posts?cat=development",
   },
   {
     id: 4,
-    title: "Databases",
+    title: 'Databases',
+    selector: 'databases',
     url: "/posts?cat=databases",
   },
   {
     id: 5,
-    title: "Search Engines",
+    title: 'Search Engines',
+    selector: 'seo',
     url: "/posts?cat=search-engines",
   },
   {
     id: 6,
-    title: "Marketing",
+    title: 'Marketing',
+    value: 'marketing',
     url: "/posts?cat=marketing",
+  },
+];
+
+export const filterItems = [
+  {
+    id: 1,
+    name: "Newest",
+    value: "newest",
+  },
+  {
+    id: 2,
+    name: "Most Popular",
+    value: "popular",
+  },
+  {
+    id: 3,
+    name: "Trending",
+    value: "trending",
+  },
+  {
+    id: 4,
+    name: "Oldest",
+    value: "oldest",
   },
 ];
 
