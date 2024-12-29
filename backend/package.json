@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^2.0.2",
     "express": "^5.0.1",
     "mongoose": "^8.9.2",
     "svix": "^1.44.0"
