@@ -8,9 +8,12 @@ import webhookRouter from "./routes/webhook.route.js";
 
 import { clerkMiddleware } from "@clerk/express";
 
+import cors from "cors";
+
 
 const app = express();
 
+app.use(cors({ origin: process.env.CLIENT_URL }));
 app.use(clerkMiddleware());
 app.use("/webhooks", webhookRouter);
 app.use(express.json());
