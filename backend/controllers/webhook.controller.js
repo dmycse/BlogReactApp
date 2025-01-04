@@ -26,6 +26,7 @@ export const clerkWebhook = async (req, res) => {
 
   }
 
+
   if (event.type === 'user.created') {
     const newUser = new User({
       clerkUserId: event.data.id,

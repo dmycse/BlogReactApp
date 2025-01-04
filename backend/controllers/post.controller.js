@@ -17,36 +17,37 @@ export const getPost = async (req, res) => {
 };
 
 export const createPost = async (req, res) => {
-  const clerkUserId = req.auth.userId;
+  // const clerkUserId = req.auth.userId;
+ 
+  // if (!clerkUserId) {
+  //   return res.status(401).json({ message: "Not authenticated" });
+  // }
 
-  if (!clerkUserId) {
-    return res.status(401).json({ message: "Not authenticated" });
-  }
+  // const user = await User.findOne({ clerkUserId });
 
-  const user = await User.findOne({ clerkUserId });
+  // if (!user) {
+  //   return res.status(404).json({ message: "User not found" });
+  // }
 
-  if (!user) {
-    return res.status(404).json({ message: "User not found" });
-  }
-
-  const newPost = new Post({user: user._id, ...req.body});
+  // const newPost = new Post({user: user._id, ...req.body});
+  const newPost = new Post({...req.body});
 
   const post = await newPost.save();
   res.status(200).json(post);
 };
 
 export const deletePost = async (req, res) => {
-  const clerkUserId = req.auth.userId;
+  // const clerkUserId = req.auth.userId;
 
-  if (!clerkUserId) {
-    return res.status(401).json({ message: "Not authenticated" });
-  }
+  // if (!clerkUserId) {
+  //   return res.status(401).json({ message: "Not authenticated" });
+  // }
 
-  const user = await User.findOne({ clerkUserId });
+  // const user = await User.findOne({ clerkUserId });
 
   const deletedPost = await Post.findByIdAndDelete({
     _id: req.params.id, 
-    user: user._id
+    // user: user._id
   });
 
 
