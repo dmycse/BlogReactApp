@@ -2,9 +2,10 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { MainLayout } from './components/layouts/MainLayout';
-import { Homepage, PostListPage, SinglePostPage, Write, LoginPage, RegisterPage } from './components/routes';
+import {QueryClientProvider, QueryClient} from '@tanstack/react-query';
 import { ClerkProvider } from '@clerk/clerk-react';
-import {QueryClientProvider, QueryClient} from '@tanstack/react-query'
+import { ToastContainer } from 'react-toastify';
+import { Homepage, PostListPage, SinglePostPage, Write, LoginPage, RegisterPage } from './components/routes';
 import './index.css'
 
 
@@ -54,6 +55,7 @@ createRoot(document.getElementById('root')).render(
     <ClerkProvider publishableKey={PUBLISHABLE_KEY} afterSignOutUrl="/">
       <QueryClientProvider client={queryClient}>
         <RouterProvider router={router} />
+        <ToastContainer position='bottom-right' />
       </QueryClientProvider>
     </ClerkProvider>
   </StrictMode>,
