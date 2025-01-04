@@ -15,7 +15,6 @@ export const getPost = async (req, res) => {
   res.status(200).json(post);
   
 };
-
 export const createPost = async (req, res) => {
   // const clerkUserId = req.auth.userId;
  
@@ -30,7 +29,16 @@ export const createPost = async (req, res) => {
   // }
 
   // const newPost = new Post({user: user._id, ...req.body});
-  const newPost = new Post({...req.body});
+
+  let slug = req.body.title.toLowerCase().replace(/[^\w\s]/g, '').replace(/\s+/g, '-').trim();
+
+  let slugExists = await Post.findOne({ slug });
+
+  if (slugExists) {
+    slug = `${slug}-${Math.floor(Math.random() * 10000)}`;
+  }
+
+  const newPost = new Post({slug, ...req.body});
 
   const post = await newPost.save();
   res.status(200).json(post);
