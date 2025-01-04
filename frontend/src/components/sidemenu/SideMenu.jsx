@@ -3,7 +3,7 @@ import { Search } from "../search";
 
 export const SideMenu = () => {
   return (
-    <div className="px-4 h-max sticky top-8">
+    <aside className="px-4 h-max sticky top-8">
       <h1 className="mb-4 text-sm font-semibold">Search</h1>
       <Search />
       <h1 className="mt-8 mb-4 text-sm font-semibold">Filter</h1>
@@ -35,6 +35,6 @@ export const SideMenu = () => {
           </li>
         ))}
       </ul>
-    </div>
+    </aside>
   )
 }
