@@ -4,6 +4,10 @@ import bodyParser from "body-parser";
 
 const router = Router();
 
-router.post("/clerk", bodyParser.raw({ type: 'application/json' }), clerkWebhook)
+router.post(
+  "/clerk", 
+  bodyParser.raw({ type: 'application/json' }), 
+  clerkWebhook
+);
 
 export default router;

@@ -13,20 +13,23 @@ import cors from "cors";
 
 const app = express();
 
+
 app.use(cors({ origin: process.env.CLIENT_URL }));
 app.use(clerkMiddleware());
-app.use("/webhooks", webhookRouter);
+
 app.use(express.json());
+app.use("/webhooks", webhookRouter);
 
 // app.get("/protect", (req, res) => {
-//   const { userId } = req.auth;
-
-//   if (userId) {    
+//   const authData = req.auth;
+//   console.log("Auth data", authData);
+//   if (!authData.userId) {    
 //     return res.status(401).json({ message: "Unauthorized" });
 //   }
 
-//   return res.status(200).json("content");
+//   return res.status(200).json(authData);
 // });
+
 
 app.use("/users", userRouter);
 app.use("/posts", postRouter);

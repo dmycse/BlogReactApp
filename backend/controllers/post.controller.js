@@ -1,5 +1,6 @@
 import Post from "../models/post.model.js";
 import User from "../models/user.model.js";
+import { clerkMiddleware, getAuth, requireAuth } from '@clerk/express'
 
 // In Espress v.5 you don't need to use try/catch cause 
 // if an error is thrown it will be catched error automatically
@@ -16,19 +17,17 @@ export const getPost = async (req, res) => {
   
 };
 export const createPost = async (req, res) => {
-  // const clerkUserId = req.auth.userId;
+  const clerkUserId = req.auth.userId;
  
-  // if (!clerkUserId) {
-  //   return res.status(401).json({ message: "Not authenticated" });
-  // }
+  if (!clerkUserId) {
+    return res.status(401).json({ message: "Not authenticated" });
+  }
 
-  // const user = await User.findOne({ clerkUserId });
+  const user = await User.findOne({ clerkUserId });
 
-  // if (!user) {
-  //   return res.status(404).json({ message: "User not found" });
-  // }
-
-  // const newPost = new Post({user: user._id, ...req.body});
+  if (!user) {
+    return res.status(404).json({ message: "User not found" });
+  }
 
   let slug = req.body.title.toLowerCase().replace(/[^\w\s]/g, '').replace(/\s+/g, '-').trim();
 
@@ -38,26 +37,25 @@ export const createPost = async (req, res) => {
     slug = `${slug}-${Math.floor(Math.random() * 10000)}`;
   }
 
-  const newPost = new Post({slug, ...req.body});
+  const newPost = new Post({user: user._id, ...req.body, slug});
 
   const post = await newPost.save();
   res.status(200).json(post);
 };
 
 export const deletePost = async (req, res) => {
-  // const clerkUserId = req.auth.userId;
+  const clerkUserId = req.auth.userId;
 
-  // if (!clerkUserId) {
-  //   return res.status(401).json({ message: "Not authenticated" });
-  // }
+  if (!clerkUserId) {
+    return res.status(401).json({ message: "Not authenticated" });
+  }
 
-  // const user = await User.findOne({ clerkUserId });
+  const user = await User.findOne({ clerkUserId });
 
   const deletedPost = await Post.findByIdAndDelete({
     _id: req.params.id, 
-    // user: user._id
+    user: user._id
   });
-
 
   if (!deletedPost) {
     return res.status(403).json({ message: "You can't delete this post" });
