@@ -1,15 +1,16 @@
 import { Link } from "react-router-dom";
 import { Postcrubms } from "./Postcrubms";
+import { CustomImage } from "../media/CustomImage";
 
 export const PostItem = ({item}) => {
   return (
     <div className="mb-12 flex flex-col xl:flex-row gap-8">
       <div className="md:hidden xl:block xl:w-1/3">
-        <img
-          loading="lazy" 
-          src={item.imageUrl} 
-          alt="image"
+        <CustomImage 
+          src="postImg.jpeg"
+          alt="post image" 
           width={735} 
+          height={735} 
           className="h-full rounded-xl object-cover"
         />
       </div>
