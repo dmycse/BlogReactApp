@@ -1,6 +1,5 @@
 import { Outlet } from "react-router-dom";
-import { Navbar } from "../../widgets/navbar";
-
+import { Navbar } from "@/widgets/navbar";
 
 export const MainLayout = () => {
   return (
@@ -9,4 +8,4 @@ export const MainLayout = () => {
       <Outlet />
     </div>
   )
-}
+};
