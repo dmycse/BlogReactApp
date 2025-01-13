@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { NavigationItems } from "./NavigationItems";
+import { NavigationItems } from "@/widgets/header/nav-items/NavigationItems";
 import { Menu } from "lucide-react";
 
-export const MobileMenu = () => {
+export const MobileView = () => {
 
   const [openMobileMenu, setOpenMobileMenu] = useState(false);
 
@@ -12,7 +12,7 @@ export const MobileMenu = () => {
         className="cursor-pointer text-2xl"
         onClick={() => setOpenMobileMenu(prev => !prev)}
       >
-        {openMobileMenu ? "X" : <Menu className="w-8 h-8"/>}
+        {openMobileMenu ? "X" : <Menu className="w-8 h-8" />}
       </button>
       <nav 
         className={`pt-10 w-full h-screen bg-purple-200 
@@ -23,4 +23,4 @@ export const MobileMenu = () => {
       </nav>
     </div>
   )
-}
+};
