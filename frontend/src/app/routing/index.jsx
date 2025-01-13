@@ -1,15 +1,18 @@
 import { createBrowserRouter } from "react-router-dom";
 
 import { MainLayout } from "../layouts";
-import { 
-  Homepage, 
-  PostsListPage, 
-  SinglePostPage, 
-  CreatePostPage, 
-  LoginPage, 
-  // RegisterUserPage, 
-  // AboutPage
-} from "@/pages";
+import { Homepage } from "@/pages/homePage";
+
+// import { 
+ 
+//   PostsListPage, 
+//   SinglePostPage, 
+//   CreatePostPage, 
+
+//   LoginPage, 
+//   RegisterUserPage, 
+//   AboutPage
+// } from "@/pages";
 
 
 export const router = createBrowserRouter([
@@ -20,22 +23,22 @@ export const router = createBrowserRouter([
         path: "/",
         element: <Homepage />,
       },
-      {
-        path: "/posts",
-        element: <PostsListPage />,
-      },
-      {
-        path: "/posts/:slug",
-        element: <SinglePostPage />,
-      },
-      {
-        path: "/write",
-        element: <CreatePostPage />,
-      },
-      {
-        path: "/login",
-        element: <LoginPage />,
-      },
+      // {
+      //   path: "/posts",
+      //   element: <PostsListPage />,
+      // },
+      // {
+      //   path: "/posts/:slug",
+      //   element: <SinglePostPage />,
+      // },
+      // {
+      //   path: "/write",
+      //   element: <CreatePostPage />,
+      // },
+      // {
+      //   path: "/login",
+      //   element: <LoginPage />,
+      // },
       // {
       //   path: "/register",
       //   element: <RegisterUserPage />,
