@@ -12,8 +12,6 @@ export const PostsList = () => {
     ref 
   } = useInfinityPosts();
 
-  console.log('Posts ->', posts);
-
   if (isLoading) {
     return <div>Posts Loading...</div>;
   }
@@ -27,7 +25,7 @@ export const PostsList = () => {
     <div className='mb-8 flex flex-col gap-4'>
       <h2 className='my-8 text-2xl text-gray-600'>Recent Posts</h2>
       {posts?.map(item => (
-        <PostItem key={item.id} post={item} />
+        <PostItem key={item._id} post={item} />
       ))}
       <div ref={ref}>
         {!hasNextPage && <div>No more posts</div>}

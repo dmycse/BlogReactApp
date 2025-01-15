@@ -17,8 +17,6 @@ export const useInfinityPosts = () => {
     queryFn: ({ pageParam = 1 }) => fetchInfinityPosts(pageParam),
     initialPageParam: 1,
     getNextPageParam: (lastPage, pages) => {  
-      console.log({ lastPage, pages });
-
       return lastPage.hasMorePosts ? pages.length + 1 : undefined;
     },
     select: data => data.pages.flatMap(page => page.posts),
