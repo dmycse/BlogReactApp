@@ -11,4 +11,4 @@ export const Postcrubms = ({author, category, time}) => {
       <span>{time}</span>
     </div>
   )
-}
+};
