@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom";
 
-import { Breadcrumbs } from "@/widgets/breadcrumbs/Breadcrumbs";
-import { Postcrubms } from "@/widgets/postcrumbs/Postcrumbs";
-import { Comments } from "@/widgets/comments/ui/Comments";
+import { Breadcrumbs } from "@/c-widgets/breadcrumbs/Breadcrumbs";
+import { Postcrubms } from "@/c-widgets/postcrumbs/Postcrumbs";
+import { Comments } from "@/c-widgets/comments/ui/Comments";
 
-import { PostActions } from "@/entities/post";
+import { PostActions } from "@/e-entities/post";
 
-import { SearchInput } from "@/shared/ui/searchInput/SearchInput";
-import { categories } from "@/shared/constants";
-import { PostDetails } from "@/widgets/postDetails";
+import { SearchInput } from "@/s-shared/ui/searchInput/SearchInput";
+import { categories } from "@/s-shared/constants";
+import { PostDetails } from "@/c-widgets/postDetails";
 
 export const PostPage = () => {
   return (

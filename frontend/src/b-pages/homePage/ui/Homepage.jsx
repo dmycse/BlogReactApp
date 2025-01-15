@@ -1,10 +1,10 @@
-import { Breadcrumbs } from '@/widgets/breadcrumbs/Breadcrumbs';
-import { PageTitle } from '@/shared/ui/pageTitle/PageTitle.jsx'
-import { CreatePostWidget } from '@/widgets/createPost/CreatePostWidget'
-import { CategoriesWidget } from '@/widgets/categories';
-import { FeaturedPostLV, FeaturedPostSV } from '@/widgets/featuredPost';
-import { PostsList } from '@/shared/ui/postsList/PostsList';
-import { featuredPosts } from "@/shared/constants";
+import { Breadcrumbs } from '@/c-widgets/breadcrumbs/Breadcrumbs';
+import { PageTitle } from '@/s-shared/ui/pageTitle/PageTitle.jsx'
+import { CreatePostWidget } from '@/c-widgets/createPost/CreatePostWidget'
+import { CategoriesWidget } from '@/c-widgets/categories';
+import { FeaturedPostLV, FeaturedPostSV } from '@/c-widgets/featuredPost';
+import { PostsList } from '@/c-widgets/postsList';
+import { featuredPosts } from "@/s-shared/constants";
 
 export const Homepage = () => {
   return (

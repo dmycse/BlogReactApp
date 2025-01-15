@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { PostsList } from "@/shared/ui/postsList/PostsList";
-import { SideMenu } from "@/widgets/sidemenu";
+import { PostsList } from "@/c-widgets/postsList/ui/PostsList";
+import { SideMenu } from "@/c-widgets/sidemenu";
 
 export const PostsListPage = () => {
 
