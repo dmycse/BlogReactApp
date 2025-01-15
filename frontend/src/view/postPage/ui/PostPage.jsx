@@ -1,14 +1,19 @@
 import { Link } from "react-router-dom";
-import { Breadcrumbs } from "../sections";
-import { Postcrubms, PostsMenuActions } from "../posts";
-import { categories } from "../../constants/constants";
-import { Search } from "../search";
-import { Comments } from "../comments";
 
-export const SinglePostPage = () => {
+import { Breadcrumbs } from "@/widgets/breadcrumbs-widget/Breadcrumbs";
+import { Postcrubms } from "@/widgets/postcrumbs-widget/Postcrumbs";
+import { Comments } from "@/widgets/comments-widget/ui/Comments";
+
+import { PostActions } from "@/entities/post";
+
+import { SearchInput } from "@/shared/ui-elements/searchInput/SearchInput";
+import { categories } from "@/shared/constants";
+import { PostDetails } from "@/widgets/postDetails";
+
+export const PostPage = () => {
   return (
     <section className="flex flex-col gap-4">
-      <Breadcrumbs text={'Single Post'} />
+      <Breadcrumbs text='Post' />
       <div className="flex flex-col gap-8">
         <div className="flex gap-8">
           <div className="lg:w-3/5 flex flex-col gap-6">
@@ -135,41 +140,7 @@ export const SinglePostPage = () => {
               eaque sint, iste hic voluptatem nam!
             </p>
           </div>
-          <div className="px-4 h-max sticky top-4">
-            <h2 className="mb-4 text-sm font-medium">Author</h2>
-            <div className="mb-2 flex items-center gap-6">
-              <img 
-                src="/userImg.jpeg" 
-                alt="user"
-                width={48}
-                height={48} 
-                className="w-12 h-12 rounded-full object-cover" 
-              />
-              <Link to="/" className="text-purple-900">John Doe</Link>
-            </div>
-            <p className="mb-2 text-gray-500 text-sm">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt, saepe?
-            </p>
-            <div className="flex gap-2">
-              <Link to=''><img src="/facebook.svg" alt="facebook" width={24} /></Link>
-              <Link to=''><img src="/instagram.svg" alt="facebook" width={24} /></Link>
-            </div>
-            <PostsMenuActions />
-            <h2 className="mt-4 mb-2 text-sm font-medium">Categories</h2>
-            <nav className="flex flex-col gap-2 text-sm">
-              {categories.map(item => (
-                <Link 
-                  key={item.id} 
-                  to={item.url}
-                  className="text-sm text-blue-800 underline"
-                >
-                  {item.title}
-                </Link>
-              ))}
-            </nav>
-            <h2 className="mt-4 mb-2 text-sm font-medium">Search</h2>
-           <Search />
-          </div>
+          <PostDetails />
         </div>
         <Comments />
       </div>
