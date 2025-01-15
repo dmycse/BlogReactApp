@@ -1,14 +1,34 @@
+import ImageKit from "imagekit";
 import Post from "../models/post.model.js";
 import User from "../models/user.model.js";
-import { clerkMiddleware, getAuth, requireAuth } from '@clerk/express'
 
 // In Espress v.5 you don't need to use try/catch cause 
 // if an error is thrown it will be catched error automatically
 // and the error will be catched by the error middleware handler
 
+// get all posts
+// export const getAllPosts = async (req, res) => {
+//   const posts = await Post.find();
+//   res.status(200).json(posts);
+// };
+
+// get all posts with infinity scroll
 export const getAllPosts = async (req, res) => {
-  const posts = await Post.find();
-  res.status(200).json(posts);
+
+  const page = parseInt(req.query.page) || 1;
+  const limit = parseInt(req.query.limit) || 2;
+  const skip = (page - 1) * limit;
+  console.log('Page ->', page);
+  console.log('Limit ->', limit);
+  console.log('Skip ->', skip);
+  const posts = await Post.find().limit(limit).skip(skip);
+  
+  const totalPosts = await Post.countDocuments();
+  const hasMorePosts = page * limit < totalPosts;
+  console.log('Total posts ->', totalPosts);
+  console.log('Has more posts ->', hasMorePosts);
+
+  res.status(200).json({posts, hasMorePosts});
 };
 
 export const getPost = async (req, res) => {
@@ -62,4 +82,16 @@ export const deletePost = async (req, res) => {
   }
 
   res.status(200).json('Post deleted');
+};
+
+
+const imagekit = new ImageKit({
+  urlEndpoint: process.env.IMAGEKIT_URL_ENDPOINT,
+  publicKey: process.env.IMAGEKIT_PUBLIC_KEY,
+  privateKey: process.env.IMAGEKIT_PRIVATE_KEY,
+});
+
+export const uploadAuth = async (req, res) => {
+  const result = imagekit.getAuthenticationParameters();
+  res.send(result);
 };
