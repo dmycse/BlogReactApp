@@ -1,11 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
 
 import { MainLayout } from "../layouts";
-import { Homepage } from "@/view/homePage";
-import { CreatePostPage } from "@/view/createPostPage";
-import { PostsListPage } from "@/view/postsListPage";
-import { PostPage } from "@/view/postPage";
-import { LoginPage } from "@/view/loginPage";
+import { Homepage } from "@/b-pages/homePage";
+import { CreatePostPage } from "@/b-pages/createPostPage";
+import { PostsListPage } from "@/b-pages/postsListPage";
+import { PostPage } from "@/b-pages/postPage";
+import { LoginPage } from "@/b-pages/loginPage";
 
 // import { 
  
