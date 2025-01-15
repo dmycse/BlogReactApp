@@ -20,7 +20,7 @@ export const CreatePostForm = () => {
       setProgress
     } = useMediaContent();
   
-    let { createNewPost, isPending, error } = useCreatePost()
+    let { createNewPost, isPending, error } = useCreatePost();
   
     // const {isLoaded, isSignedIn} = useUser();
     
@@ -32,26 +32,26 @@ export const CreatePostForm = () => {
     //   return <div>You should login!</div>
     // }
   
-    const handleSubmit = (e) => {
-      e.preventDefault();
-   
-      const formData = new FormData(e.currentTarget);
-      
-      let title = formData.get('title').trim().charAt(0).toUpperCase() + formData.get('title').trim().slice(1);
+  const handleSubmit = (e) => {
+    e.preventDefault();
   
-      const newPost = {
-        title, 
-        img: cover.filePath || "",
-        category: formData.get('category'),
-        description: formData.get('description').trim(), 
-        content: contentValue.trim(),
-      };
-      
-      createNewPost(newPost);
-  
-      e.currentTarget.reset();
-      setContentValue('');
+    const formData = new FormData(e.currentTarget);
+    
+    let title = formData.get('title').trim().charAt(0).toUpperCase() + formData.get('title').trim().slice(1);
+
+    const newPost = {
+      title, 
+      img: cover.filePath || "",
+      category: formData.get('category'),
+      description: formData.get('description').trim(), 
+      content: contentValue.trim(),
     };
+    
+    createNewPost(newPost);
+
+    e.currentTarget.reset();
+    setContentValue('');
+  };
   
 
   return (

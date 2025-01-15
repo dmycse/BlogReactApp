@@ -23,8 +23,9 @@ export const useCreatePost = () => {
 
 
   return {
-    
-    
+    createNewPost,
+    isPending,
+    error
   }
 
 }
