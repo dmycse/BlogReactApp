@@ -1,5 +1,5 @@
-import { categories, filterItems } from "@/shared/constants";
-import { SearchInput } from "@/shared/ui/searchInput/SearchInput";
+import { categories, filterItems } from "@/s-shared/constants";
+import { SearchInput } from "@/s-shared/ui/searchInput/SearchInput";
 
 export const SideMenu = () => {
   return (

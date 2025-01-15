@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NavigationItems } from "@/widgets/header/nav-items/NavigationItems";
+import { NavigationItems } from "@/c-widgets/header/nav-items/NavigationItems";
 import { Menu } from "lucide-react";
 
 export const MobileView = () => {

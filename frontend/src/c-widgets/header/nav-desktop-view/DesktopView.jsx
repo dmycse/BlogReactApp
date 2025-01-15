@@ -1,4 +1,4 @@
-import { NavigationItems } from "@/widgets/header/nav-items/NavigationItems";
+import { NavigationItems } from "@/c-widgets/header/nav-items/NavigationItems";
 
 
 export const DesktopView = () => {

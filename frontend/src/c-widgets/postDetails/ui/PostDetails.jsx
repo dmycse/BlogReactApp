@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import { PostActions } from "@/entities/post";
-import { SearchInput } from "@/shared/ui/searchInput/SearchInput";
-import { categories } from "@/shared/constants";
+import { PostActions } from "@/e-entities/post";
+import { SearchInput } from "@/s-shared/ui/searchInput/SearchInput";
+import { categories } from "@/s-shared/constants";
 
 export const PostDetails = () => {
   return (

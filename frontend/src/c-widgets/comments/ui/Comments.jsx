@@ -1,4 +1,4 @@
-import { CommentItem } from "@/entities/comment";
+import { CommentItem } from "@/e-entities/comment";
 
 export const Comments = () => {
   return (

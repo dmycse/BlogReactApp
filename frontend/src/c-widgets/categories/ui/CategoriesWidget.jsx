@@ -1,5 +1,5 @@
-import { CategoriesItems } from '@/entities/categories';
-import { SearchInput } from "@/shared/ui/searchInput/SearchInput";
+import { CategoriesItems } from '@/e-entities/categories';
+import { SearchInput } from "@/s-shared/ui/searchInput/SearchInput";
 
 export const CategoriesWidget = () => {
   return (
