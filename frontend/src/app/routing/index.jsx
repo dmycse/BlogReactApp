@@ -1,7 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
 
 import { MainLayout } from "../layouts";
-import { Homepage } from "@/pages/homePage";
+import { Homepage } from "@/view/homePage";
+import { CreatePostPage } from "@/view/createPostPage";
+import { PostsListPage } from "@/view/postsListPage";
+import { PostPage } from "@/view/postPage";
 
 // import { 
  
@@ -23,18 +26,18 @@ export const router = createBrowserRouter([
         path: "/",
         element: <Homepage />,
       },
-      // {
-      //   path: "/posts",
-      //   element: <PostsListPage />,
-      // },
-      // {
-      //   path: "/posts/:slug",
-      //   element: <SinglePostPage />,
-      // },
-      // {
-      //   path: "/write",
-      //   element: <CreatePostPage />,
-      // },
+      {
+        path: "/posts",
+        element: <PostsListPage />,
+      },
+      {
+        path: "/posts/:slug",
+        element: <PostPage />,
+      },
+      {
+        path: "/create-post",
+        element: <CreatePostPage />,
+      },
       // {
       //   path: "/login",
       //   element: <LoginPage />,
