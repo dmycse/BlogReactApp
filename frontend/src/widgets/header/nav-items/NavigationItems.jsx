@@ -1,4 +1,4 @@
-import { NavItems } from "@/shared/ui/navItems/NavItems";
+import { NavItems } from "@/shared/ui-elements/navItems/NavItems";
 import { LogIn } from "@/features/logIn";
 import { LogOut } from "@/features/logOut";
 
