@@ -1,4 +1,4 @@
-export const menuItems = [
+export const navItems = [
   {
     id: 1,
     title: "Home",
@@ -60,29 +60,6 @@ export const categories = [
   },
 ];
 
-export const filterItems = [
-  {
-    id: 1,
-    name: "Newest",
-    value: "newest",
-  },
-  {
-    id: 2,
-    name: "Most Popular",
-    value: "popular",
-  },
-  {
-    id: 3,
-    name: "Trending",
-    value: "trending",
-  },
-  {
-    id: 4,
-    name: "Oldest",
-    value: "oldest",
-  },
-];
-
 export const featuredPosts = [
   {
     id: 1,
@@ -113,6 +90,30 @@ export const featuredPosts = [
     url: "/posts/4"
   }
 ];
+
+export const filterItems = [
+  {
+    id: 1,
+    name: "Newest",
+    value: "newest",
+  },
+  {
+    id: 2,
+    name: "Most Popular",
+    value: "popular",
+  },
+  {
+    id: 3,
+    name: "Trending",
+    value: "trending",
+  },
+  {
+    id: 4,
+    name: "Oldest",
+    value: "oldest",
+  },
+];
+
 
 export const postsList = [
   {
