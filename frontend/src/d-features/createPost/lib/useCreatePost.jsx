@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { useUser, useAuth } from '@clerk/clerk-react';
 import { useMutation } from '@tanstack/react-query';
 import { toast } from 'react-toastify';
-import { createPost } from '@/shared/api/posts/createPost';
+import { createPost } from '@/s-shared/api/posts/createPost';
 
 export const useCreatePost = () => {
 

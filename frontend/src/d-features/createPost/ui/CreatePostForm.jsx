@@ -1,7 +1,7 @@
 import { useMediaContent } from '../lib/useMediaContent';
 import { useCreatePost } from '../lib/useCreatePost';
-import { UploadMedia } from '@/shared/ui/UploadMedia';
-import { categories } from '@/shared/constants';
+import { UploadMedia } from '@/s-shared/ui/UploadMedia';
+import { categories } from '@/s-shared/constants';
 
 import ReactQuill from 'react-quill-new';
 import 'react-quill-new/dist/quill.snow.css';
