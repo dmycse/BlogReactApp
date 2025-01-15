@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 
-import { Breadcrumbs } from "@/widgets/breadcrumbs-widget/Breadcrumbs";
-import { Postcrubms } from "@/widgets/postcrumbs-widget/Postcrumbs";
-import { Comments } from "@/widgets/comments-widget/ui/Comments";
+import { Breadcrumbs } from "@/widgets/breadcrumbs/Breadcrumbs";
+import { Postcrubms } from "@/widgets/postcrumbs/Postcrumbs";
+import { Comments } from "@/widgets/comments/ui/Comments";
 
 import { PostActions } from "@/entities/post";
 
-import { SearchInput } from "@/shared/ui-elements/searchInput/SearchInput";
+import { SearchInput } from "@/shared/ui/searchInput/SearchInput";
 import { categories } from "@/shared/constants";
 import { PostDetails } from "@/widgets/postDetails";
 

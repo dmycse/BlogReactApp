@@ -1,4 +1,4 @@
-import { CreatePostForm } from "@/features/create-post";
+import { CreatePostForm } from "@/features/createPost";
 
 export const CreatePostPage = () => {
 

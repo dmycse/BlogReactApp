@@ -1,9 +1,9 @@
-import { Breadcrumbs } from '@/widgets/breadcrumbs-widget/Breadcrumbs';
-import { PageTitle } from '@/shared/ui-elements/pageTitle/PageTitle.jsx'
-import { CreatePostWidget } from '@/widgets/create-post-widget/CreatePostWidget'
-import { CategoriesWidget } from '@/widgets/categories-widget';
-import { FeaturedPostLV, FeaturedPostSV } from '@/widgets/featured-post-widget';
-import { PostsList } from '@/shared/ui-elements/postsList/PostsList';
+import { Breadcrumbs } from '@/widgets/breadcrumbs/Breadcrumbs';
+import { PageTitle } from '@/shared/ui/pageTitle/PageTitle.jsx'
+import { CreatePostWidget } from '@/widgets/createPost/CreatePostWidget'
+import { CategoriesWidget } from '@/widgets/categories';
+import { FeaturedPostLV, FeaturedPostSV } from '@/widgets/featuredPost';
+import { PostsList } from '@/shared/ui/postsList/PostsList';
 import { featuredPosts } from "@/shared/constants";
 
 export const Homepage = () => {

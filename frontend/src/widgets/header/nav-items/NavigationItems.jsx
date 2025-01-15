@@ -1,6 +1,6 @@
-import { NavItems } from "@/shared/ui-elements/navItems/NavItems";
-import { LogIn } from "@/features/logIn";
-import { LogOut } from "@/features/logOut";
+import { NavItems } from "@/shared/ui/navItems/NavItems";
+import { LogIn } from "@/features/logIn/LogIn";
+import { LogOut } from "@/features/logOut/LogOut";
 
 export const NavigationItems = ({className}) => {
 
