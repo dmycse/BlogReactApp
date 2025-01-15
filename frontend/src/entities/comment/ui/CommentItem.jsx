@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const Comment = () => {
+export const CommentItem = () => {
   return (
     <div className="mb-8 p-4 bg-slate-50 rounded-xl">
       <div className="flex items-center gap-4">

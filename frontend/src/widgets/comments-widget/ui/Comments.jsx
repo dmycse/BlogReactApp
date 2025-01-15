@@ -1,4 +1,4 @@
-import { Comment } from "./Comment";
+import { CommentItem } from "@/entities/comment";
 
 export const Comments = () => {
   return (
@@ -8,10 +8,10 @@ export const Comments = () => {
         <textarea name="newcomment" id="newcomment" placeholder='Write a comment' className='p-3 w-full outline-none rounded-xl'/>
         <button className='px-4 py-2 bg-purple-500 text-white rounded-xl'>Send</button>
       </div>
-      <Comment />
-      <Comment />
-      <Comment />
-      <Comment />
+      <CommentItem />
+      <CommentItem />
+      <CommentItem />
+      <CommentItem />
     </div>
   )
 }
