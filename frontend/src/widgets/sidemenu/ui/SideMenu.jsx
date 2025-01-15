@@ -1,11 +1,11 @@
-import { categories, filterItems } from "../../constants/constants";
-import { Search } from "../search";
+import { categories, filterItems } from "@/shared/constants";
+import { SearchInput } from "@/shared/ui-elements/searchInput/SearchInput";
 
 export const SideMenu = () => {
   return (
-    <aside className="px-4 h-max sticky top-8">
+    <aside className="px-2 h-max sticky top-8">
       <h1 className="mb-4 text-sm font-semibold">Search</h1>
-      <Search />
+      <SearchInput />
       <h1 className="mt-8 mb-4 text-sm font-semibold">Filter</h1>
       <div className="flex flex-col gap-2 text-sm">
         {filterItems.map(item => (
