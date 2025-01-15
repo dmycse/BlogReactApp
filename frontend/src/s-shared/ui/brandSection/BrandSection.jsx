@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { CustomImage } from "@/shared/ui/customImage";
+import { CustomImage } from "@/s-shared/ui/customImage";
 
 export const BrandSection = () => {
   return (

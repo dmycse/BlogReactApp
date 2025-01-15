@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { navItems } from "@/shared/constants";
+import { navItems } from "@/s-shared/constants";
 
 export const NavItems = () => {
   return (
