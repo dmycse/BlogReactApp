@@ -4,14 +4,14 @@ import { CustomImage } from "@/s-shared/ui/customImage";
 
 export const PostItem = ({ post }) => {
   return (
-    <div className="mb-12 flex flex-col xl:flex-row gap-6">
-      <div className="md:hidden xl:block xl:w-1/3">
+    <div className="mb-12 flex flex-col md:flex-row gap-6">
+      <div className="sm:hidden md:block xl:w-1/3">
         {post.img && (
           <CustomImage 
             src={post.img}
             alt="post image" 
-            // width={450} 
-            // height={450} 
+            width={400} 
+            height={300} 
             className="h-full rounded-xl object-cover"
           />)
         }
@@ -22,7 +22,11 @@ export const PostItem = ({ post }) => {
           className="text-2xl font-semibold">
           {post.title}
         </Link>
-        <Postcrubms author={post.author} category={post.category} time={post.updatedAt} />
+        <Postcrubms 
+          author={post.user.username} 
+          category={post.category} 
+          time={new Date(post.createdAt).toLocaleDateString()} 
+        />
         <p className="">
           {post.description}
         </p>
