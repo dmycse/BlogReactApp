@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { categories } from '@/shared/constants';
+import { categories } from '@/s-shared/constants';
 
 export const CategoriesItems = () => {
   return (

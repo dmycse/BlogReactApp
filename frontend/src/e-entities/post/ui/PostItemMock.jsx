@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import { Postcrubms } from "@/widgets/postcrumbs/Postcrumbs";
-import { CustomImage } from "@/shared/ui/customImage";
+import { Postcrubms } from "@/c-widgets/postcrumbs/Postcrumbs";
+import { CustomImage } from "@/s-shared/ui/customImage";
 
 export const PostItem = ({ item }) => {
   return (
