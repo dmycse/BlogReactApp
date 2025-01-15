@@ -5,6 +5,7 @@ import { Homepage } from "@/view/homePage";
 import { CreatePostPage } from "@/view/createPostPage";
 import { PostsListPage } from "@/view/postsListPage";
 import { PostPage } from "@/view/postPage";
+import { LoginPage } from "@/view/loginPage";
 
 // import { 
  
@@ -38,10 +39,10 @@ export const router = createBrowserRouter([
         path: "/create-post",
         element: <CreatePostPage />,
       },
-      // {
-      //   path: "/login",
-      //   element: <LoginPage />,
-      // },
+      {
+        path: "/login",
+        element: <LoginPage />,
+      },
       // {
       //   path: "/register",
       //   element: <RegisterUserPage />,
