@@ -18,16 +18,16 @@ export const getAllPosts = async (req, res) => {
   const page = parseInt(req.query.page) || 1;
   const limit = parseInt(req.query.limit) || 2;
   const skip = (page - 1) * limit;
-  console.log('Page ->', page);
-  console.log('Limit ->', limit);
-  console.log('Skip ->', skip);
-  const posts = await Post.find().limit(limit).skip(skip);
+  
+  const posts = await Post
+    .find()
+    .populate("user", "username")
+    .limit(limit)
+    .skip(skip);
   
   const totalPosts = await Post.countDocuments();
   const hasMorePosts = page * limit < totalPosts;
-  console.log('Total posts ->', totalPosts);
-  console.log('Has more posts ->', hasMorePosts);
-
+ 
   res.status(200).json({posts, hasMorePosts});
 };
 
