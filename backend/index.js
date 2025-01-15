@@ -17,19 +17,18 @@ const app = express();
 app.use(cors({ origin: process.env.CLIENT_URL }));
 app.use(clerkMiddleware());
 
-app.use(express.json());
 app.use("/webhooks", webhookRouter);
+app.use(express.json());
 
-// app.get("/protect", (req, res) => {
-//   const authData = req.auth;
-//   console.log("Auth data", authData);
-//   if (!authData.userId) {    
-//     return res.status(401).json({ message: "Unauthorized" });
-//   }
-
-//   return res.status(200).json(authData);
-// });
-
+// allow cross-origin requests (paste from imagekit)
+app.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
 
 app.use("/users", userRouter);
 app.use("/posts", postRouter);
