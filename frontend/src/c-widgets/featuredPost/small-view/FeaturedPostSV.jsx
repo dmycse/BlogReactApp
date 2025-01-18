@@ -4,13 +4,15 @@ export const FeaturedPostSV = ({ post }) => {
   return (
     <div className="lg:h-1/3 flex justify-between gap-4">
       <div className="w-1/3 aspect-video">
-        <img 
-          loading="lazy" 
-          src={post.imageUrl} 
-          alt="image"
-          className="w-full h-full rounded-xl object-cover "
-          width={298}
-        />
+        {post.imageUrl && 
+          <img 
+            loading="lazy" 
+            src={post.imageUrl} 
+            alt="image"
+            className="w-full h-full rounded-xl object-cover "
+            width={298}
+          />
+        }
       </div>
       <div className="w-2/3 flex flex-col gap-4">
         <div className="mb-2 flex items-center gap-4 text-sm lg:text-base">
