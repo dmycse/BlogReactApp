@@ -72,7 +72,7 @@ export const PostContent = () => {
       </div>
       <div className="mb-12 lg:w-3/5 flex flex-col gap-6">
         <h1 className="text-xl text-gray-500 underline">Comments</h1>
-        <CreateComment postId={data._id} />
+        <CreateComment postId={data._id}/>
         <Comments postId={data._id} />
       </div>
     </>  
