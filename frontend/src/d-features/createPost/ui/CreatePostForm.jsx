@@ -5,6 +5,7 @@ import { categories } from '@/s-shared/constants';
 
 import ReactQuill from 'react-quill-new';
 import 'react-quill-new/dist/quill.snow.css';
+import DOMPurify from 'dompurify';
 
 
 export const CreatePostForm = () => {
@@ -38,13 +39,14 @@ export const CreatePostForm = () => {
     const formData = new FormData(e.currentTarget);
     
     let title = formData.get('title').trim().charAt(0).toUpperCase() + formData.get('title').trim().slice(1);
+    let description = formData.get('description').trim();
 
     const newPost = {
-      title, 
+      title: DOMPurify.sanitize(title), 
       img: cover.filePath || "",
       category: formData.get('category'),
-      description: formData.get('description').trim(), 
-      content: contentValue.trim(),
+      description: DOMPurify.sanitize(description), 
+      content: DOMPurify.sanitize(contentValue.trim()),
     };
     
     createNewPost(newPost);
@@ -106,7 +108,7 @@ export const CreatePostForm = () => {
           theme="snow"
           value={contentValue}
           onChange={setContentValue}
-          eadOnly={progress > 0 && progress < 100}
+          readOnly={progress > 0 && progress < 100}
           className="flex-1 rounded-xl bg-white shadow-md"
         />
     </div>
