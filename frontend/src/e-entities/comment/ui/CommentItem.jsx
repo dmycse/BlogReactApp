@@ -1,4 +1,9 @@
+import DOMPurify from 'dompurify';
+
+
 export const CommentItem = ({ user, description, createdAt }) => {
+
+  let cleanDescription = DOMPurify.sanitize(description);
 
   return (
     <div className="p-4 bg-slate-50 rounded-xl">
@@ -16,7 +21,7 @@ export const CommentItem = ({ user, description, createdAt }) => {
         </span>
       </div>
       <div className="mt-4">
-        <p>{description}</p>
+        <p>{cleanDescription}</p>
       </div>
     </div>
   )
