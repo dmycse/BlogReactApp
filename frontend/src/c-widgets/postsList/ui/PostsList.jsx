@@ -22,13 +22,17 @@ export const PostsList = () => {
 
 
   return (
-    <div className='mb-8 flex flex-col gap-4'>
-      <h2 className='my-8 text-2xl text-gray-600'>Recent Posts</h2>
-      {posts?.map(item => (
-        <PostItem key={item._id} post={item} />
-      ))}
+    <div className='mb-8 flex flex-col gap-2'>
+      <h2 className='my-4 text-2xl text-gray-600'>Recent Posts</h2>
+      <div 
+        className="mb-8 grid grid-cols-[repeat(auto-fill,minmax(250px,1fr))] max-sm:grid-cols-1 gap-8"
+      >
+        {posts?.map(item => (
+          <PostItem key={item._id} post={item} />
+        ))}
+      </div>
       <div ref={ref}>
-        {!hasNextPage && <div>No more posts</div>}
+        {/* {!hasNextPage && <div>No more posts</div>} */}
         {isFetchingNextPage && <div>Loading next page...</div>}
       </div> 
     </div>

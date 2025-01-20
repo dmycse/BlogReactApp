@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
-import { useQuery } from '@tanstack/react-query';
+import { useQuery} from '@tanstack/react-query';
 import DOMPurify from 'dompurify';
 
 import { Postcrubms } from '@/c-widgets/postcrumbs/Postcrumbs';
@@ -12,12 +12,13 @@ import { fetchPost } from '@/s-shared/api/posts/fetchPost';
 
 export const PostContent = () => {
 
-  const { slug } = useParams()
+  const { slug } = useParams();
 
   const { data, error, isLoading } = useQuery({
     queryKey: ['post', slug],
     queryFn: () => fetchPost(slug)
   });
+
 
   if (isLoading) {
     return <div>Loading...</div>
@@ -32,6 +33,7 @@ export const PostContent = () => {
   }
 
   let cleanContent = DOMPurify.sanitize(data.content);
+
 
   return (
     <>
@@ -65,14 +67,11 @@ export const PostContent = () => {
         <div className="md:text-lg flex flex-col gap-6 text-justify">
           <div dangerouslySetInnerHTML={{__html: cleanContent}} />
         </div>
-        <PostDetails
-          username={data.user.username}
-          img={data.user?.img} 
-        />
+        <PostDetails post={data} />
       </div>
       <div className="mb-12 lg:w-3/5 flex flex-col gap-6">
         <h1 className="text-xl text-gray-500 underline">Comments</h1>
-        <CreateComment postId={data._id}/>
+        <CreateComment postId={data._id} />
         <Comments postId={data._id} />
       </div>
     </>  

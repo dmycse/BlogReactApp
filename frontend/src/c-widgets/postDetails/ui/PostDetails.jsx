@@ -3,19 +3,19 @@ import { PostActions } from "@/e-entities/post";
 import { SearchInput } from "@/s-shared/ui/searchInput/SearchInput";
 import { categories } from "@/s-shared/constants";
 
-export const PostDetails = ({username, img}) => {
+export const PostDetails = ({ post }) => {
   return (
     <aside className="px-4 h-max sticky top-4">
       <h2 className="mb-4 text-sm font-medium">Author</h2>
       <div className="mb-2 flex items-center gap-6">
         <img 
-          src={img} 
+          src={post.user?.img} 
           alt="user"
-          width={48}
-          height={48} 
-          className="w-12 h-12 rounded-full object-cover" 
+          width={32}
+          height={32} 
+          className="w-8 h-8 rounded-full object-cover" 
         />
-        <Link to="/" className="text-purple-900">{username}</Link>
+        <Link to="/" className="text-purple-900">{post.user?.username}</Link>
       </div>
       <p className="mb-2 text-gray-500 text-sm">
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt, saepe?
@@ -24,7 +24,7 @@ export const PostDetails = ({username, img}) => {
         <Link to=''><img src="/facebook.svg" alt="facebook" width={24} /></Link>
         <Link to=''><img src="/instagram.svg" alt="facebook" width={24} /></Link>
       </div>
-      <PostActions />
+      <PostActions post={post} />
       <h2 className="mt-4 mb-2 text-sm font-medium">Categories</h2>
       <nav className="flex flex-col gap-2 text-sm">
         {categories.map(item => (
