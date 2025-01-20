@@ -25,37 +25,37 @@ export const categories = [
   {
     id: 1,
     title: 'General',
-    selector: 'general',
+    selector: 'General',
     url: "/posts",
   },
   {
     id: 2,
     title: 'Web Design',
-    selector: 'web-design',
+    selector: 'Web Design',
     url: "/posts?cat=web-design",
   },
   {
     id: 3,
     title: 'Development',
-    selector: 'development',
+    selector: 'Development',
     url: "/posts?cat=development",
   },
   {
     id: 4,
     title: 'Databases',
-    selector: 'databases',
+    selector: 'Databases',
     url: "/posts?cat=databases",
   },
   {
     id: 5,
     title: 'SEO',
-    selector: 'seo',
+    selector: 'SEO',
     url: "/posts?cat=seo",
   },
   {
     id: 6,
     title: 'Marketing',
-    value: 'marketing',
+    value: 'Marketing',
     url: "/posts?cat=marketing",
   },
 ];
