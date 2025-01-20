@@ -9,6 +9,7 @@ export const Comments = ({ postId }) => {
     queryFn: () => fetchComments(postId)
   });
 
+
   if (isLoading) {
     return <div>Loading...</div>
   }
@@ -16,8 +17,6 @@ export const Comments = ({ postId }) => {
   if (error) {
     return <div>Something went wrong. Error: {error.message}</div>
   }
-
-  
   return (
     <div className='flex flex-col gap-6'>
       {data?.map(comment => (

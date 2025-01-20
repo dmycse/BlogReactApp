@@ -4,7 +4,7 @@ import DOMPurify from 'dompurify';
 export const CreateComment = ({ postId }) => {
 
   let { createNewComment, isPending, error } = useCreateComment(postId);
-
+  
   const handleSubmit = (e) => {
     e.preventDefault();
   
@@ -15,7 +15,7 @@ export const CreateComment = ({ postId }) => {
     const newComment = {
       description: DOMPurify.sanitize(content),
     };
-    
+  
     createNewComment(newComment);
 
     e.currentTarget.reset();

@@ -1,14 +1,14 @@
 import DOMPurify from 'dompurify';
 
 
-export const CommentItem = ({ user, description, createdAt }) => {
+export const CommentItem = ({ _id, user, description, createdAt }) => {
 
   let cleanDescription = DOMPurify.sanitize(description);
 
   return (
-    <div className="p-4 bg-slate-50 rounded-xl">
+    <div key={_id} className="p-4 bg-slate-50 rounded-xl">
       <div className="flex items-center gap-4">
-        {user.img && (
+        {user?.img && (
           <img 
             src={user.img} 
             alt="user image"
@@ -17,7 +17,7 @@ export const CommentItem = ({ user, description, createdAt }) => {
         )}
         <span className="font-medium">{user?.username}</span>
         <span className="text-sm text-gray-500">
-          {new Date(createdAt).toLocaleDateString()}
+          {createdAt && new Date(createdAt).toLocaleDateString()}
         </span>
       </div>
       <div className="mt-4">

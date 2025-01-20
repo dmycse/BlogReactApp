@@ -6,7 +6,7 @@ import { createComment } from '@/s-shared/api/comments/createComment';
 export const useCreateComment = (postId) => {
 
   const queryClient = useQueryClient();
-
+  
   const { getToken } = useAuth();
   
   const {mutate: createNewComment, isPending, error} = useMutation({
@@ -14,12 +14,20 @@ export const useCreateComment = (postId) => {
       let token = await getToken();
       return createComment(newComment, token, postId);
     },
-    onSuccess: (res) => {
-      queryClient.invalidateQueries({queryKey:  ['comments', postId]})
+    // onSuccess: (res) => {
+    //   queryClient.invalidateQueries({queryKey:  ['comments', postId]})
+    // },
+    // onError: (error) => {
+    //   toast.error(error.response.data);
+    // },
+    onSettled: (res, error) => {
+      if (error) {
+        toast.error(error.response.data);
+        return;
+      }
+      queryClient.invalidateQueries({queryKey:  ['comments', postId]});
     },
-    onError: (error) => {
-      toast.error(error.response.data);
-    }
+    mutationKey: ['comments', postId],
   });
 
   return {
