@@ -5,7 +5,7 @@ import { categories } from "@/s-shared/constants";
 
 export const PostDetails = ({ post }) => {
   return (
-    <aside className="px-4 h-max sticky top-4">
+    <aside className="px-4 max-w-72 h-max sticky top-4">
       <h2 className="mb-4 text-sm font-medium">Author</h2>
       <div className="mb-2 flex items-center gap-6">
         <img 
