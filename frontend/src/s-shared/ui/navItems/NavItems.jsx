@@ -7,9 +7,13 @@ export const NavItems = () => {
       {navItems.map(item => (
         <li 
           key={item.id} 
-          className="px-5 py-2 hover:bg-purple-300 hover:text-white rounded-lg"
         >
-          <Link href={item.url}>{item.title}</Link>
+          <Link 
+            href={item.url}
+            className="px-5 py-2 hover:bg-purple-300 hover:text-white rounded-lg"
+          >
+            {item.title}
+          </Link>
         </li>
         ))
       }
