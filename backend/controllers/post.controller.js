@@ -21,10 +21,11 @@ export const getAllPosts = async (req, res) => {
   
   const posts = await Post
     .find()
+    .sort({ createdAt: -1 })
     .populate("user", "username")
     .limit(limit)
     .skip(skip);
-  
+
   const totalPosts = await Post.countDocuments();
   const hasMorePosts = page * limit < totalPosts;
  
