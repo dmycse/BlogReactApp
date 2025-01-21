@@ -11,13 +11,13 @@ if (!PUBLISHABLE_KEY) {
 }
 
 const queryClient = new QueryClient(
-  {
-    defaultOptions: {
-      queries: {
-        staleTime: 1 * 60 * 1000,
-      },
-    },
-  }
+  // {
+  //   defaultOptions: {
+  //     queries: {
+  //       staleTime: 1 * 60 * 1000,
+  //     },
+  //   },
+  // }
 );
 
 export const AppProviders = () => {
