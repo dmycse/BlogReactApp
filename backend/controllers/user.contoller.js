@@ -8,7 +8,7 @@ export const getUserSavedPosts = async (req, res) => {
   }
 
   const user = await User.findOne({ clerkUserId });
-
+  
   res.status(201).json(user.savedPosts);
 };
 
@@ -22,7 +22,7 @@ export const savePost = async (req, res) => {
   }
 
   const user = await User.findOne({ clerkUserId });
-
+  
   const isSaved = user.savedPosts.some(id => id === postId);
 
   if (!isSaved) {
