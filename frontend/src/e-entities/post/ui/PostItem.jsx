@@ -5,7 +5,7 @@ import { CustomImage } from "@/s-shared/ui/customImage";
 export const PostItem = ({ post }) => {
   return (
     <div className="flex flex-col gap-3">
-      <div className="flex-1">
+      <div className="flex-1 min-h-56">
         {post.img && (
           <CustomImage 
             src={post.img}
@@ -16,7 +16,7 @@ export const PostItem = ({ post }) => {
           />)
         }
       </div>
-      <div className="mb-1 sm:mb-6 min-h-2 sm:h-14 max-sm:text-lg text-xl">
+      <div className="mb-1 sm:mb-6 min-h-2 sm:h-14 max-sm:text-lg text-xl cursor-pointer">
         <Link 
           to={`/posts/${post.slug}`}
           className="font-semibold">
