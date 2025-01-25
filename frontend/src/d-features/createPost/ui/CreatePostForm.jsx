@@ -113,7 +113,7 @@ export const CreatePostForm = () => {
         />
     </div>
       <button
-        disabled={isPending || (progress > 0 && progress < 100)}
+        disabled={contentValue.trim().length < 50 || isPending || (progress > 0 && progress < 100)}
         className="mt-4 p-2 w-36 bg-purple-800 text-white font-medium rounded-xl disabled:bg-purple-400 disabled:cursor-not-allowed"
       >
         {isPending ? "Sending..." : "Send"}
