@@ -20,7 +20,7 @@ export const Comments = ({ postId }) => {
   return (
     <div className='flex flex-col gap-6'>
       {data?.map(comment => (
-        <CommentItem key={comment._id} {...comment}/>
+        <CommentItem key={comment._id} postId={postId} {...comment}/>
         ))
       }
     </div>
