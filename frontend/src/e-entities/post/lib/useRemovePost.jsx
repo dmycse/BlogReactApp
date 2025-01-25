@@ -1,4 +1,4 @@
-import { useMutation } from '@tanstack/react-query';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { useNavigate } from 'react-router-dom';
 import { deletePost } from '@/s-shared/api/posts/deletePost';
 import { toast } from 'react-toastify';
@@ -6,8 +6,9 @@ import { toast } from 'react-toastify';
 export const useRemovePost = (getToken, postId) => {
 
   const navigate = useNavigate();
+  const queryClient = useQueryClient();
 
-  const {mutate: removePost, isPending, error: postRemovingError} = useMutation({
+  const {mutate: removePost, isPending: isRemovePending, error: postRemovingError} = useMutation({
     mutationFn: async () => {
       let token = await getToken();
       return deletePost(token, postId);
@@ -15,16 +16,16 @@ export const useRemovePost = (getToken, postId) => {
     onSettled: (res, error) => {
       if (error) {
         toast.error(error.response.data);
-        return;
       }
       toast.success('Post removed successfully');
+      queryClient.invalidateQueries({queryKey:  ['posts']});
       navigate('/');
     }
   });
 
   return {
     removePost,
-    isPending,
+    isRemovePending,
     postRemovingError
   };
 }
