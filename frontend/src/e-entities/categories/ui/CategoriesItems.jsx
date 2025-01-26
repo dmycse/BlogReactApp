@@ -3,7 +3,7 @@ import { categories } from '@/s-shared/constants';
 
 export const CategoriesItems = () => {
   return (
-    <ul className="flex-1 grid grid-cols-[repeat(auto-fit,minmax(120px,1fr))] gap-y-3">
+    <ul className="flex-1 grid grid-cols-[repeat(auto-fit,minmax(105px,1fr))] gap-y-3">
       {categories.map(item => (
         <li 
           key={item.id} 
