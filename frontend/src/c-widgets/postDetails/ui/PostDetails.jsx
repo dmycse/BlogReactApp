@@ -9,11 +9,11 @@ export const PostDetails = ({ post }) => {
       <h2 className="mb-4 text-sm font-medium">Author</h2>
       <div className="mb-2 flex items-center gap-6">
         <img 
-          src={post.user?.img} 
+          src={post.user?.img || '/avatar.png'} 
           alt="user"
-          width={32}
-          height={32} 
-          className="w-8 h-8 rounded-full object-cover" 
+          width={28}
+          height={28} 
+          className="w-7 h-7 rounded-full object-cover" 
         />
         <Link to="/" className="text-purple-900">{post.user?.username}</Link>
       </div>
