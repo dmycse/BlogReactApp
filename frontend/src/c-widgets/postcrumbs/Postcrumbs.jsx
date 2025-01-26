@@ -7,7 +7,7 @@ export const Postcrubms = ({author, category, date}) => {
       <span>Written by</span>
       <Link to='' className="text-purple-500">{author}</Link>
       <span>on</span>
-      <Link to='' className="text-purple-500">{category}</Link>
+      <Link to={`/posts?category=${category}`} className="text-purple-500">{category}</Link>
       <span>{date}</span>
     </div>
   )
