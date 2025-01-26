@@ -6,9 +6,7 @@ import { SideMenu } from "@/c-widgets/sidemenu";
 export const PostsListPage = () => {
 
   let [searchParams] = useSearchParams();
-
   let category = searchParams.get('category');
-
 
   const [open, setOpen] = useState(false);
 
