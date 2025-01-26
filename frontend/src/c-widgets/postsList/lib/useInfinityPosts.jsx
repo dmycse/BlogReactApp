@@ -3,7 +3,7 @@ import { useInfiniteQuery } from '@tanstack/react-query';
 import { useInView } from "react-intersection-observer";
 import { fetchInfinityPosts } from "@/s-shared/api/posts/fetchPosts";
 
-export const useInfinityPosts = () => {
+export const useInfinityPosts = (searchParams) => {
 
   const { 
     data, 
@@ -13,16 +13,14 @@ export const useInfinityPosts = () => {
     hasNextPage,
     isFetchingNextPage
   } = useInfiniteQuery({
-    queryKey: ['posts'],
-    queryFn: ({ pageParam = 1 }) => fetchInfinityPosts(pageParam),
+    queryKey: ['posts', searchParams.toString()],
+    queryFn: ({ pageParam = 1 }) => fetchInfinityPosts(pageParam, searchParams),
     initialPageParam: 1,
     getNextPageParam: (lastPage, pages) => {  
       return lastPage.hasMorePosts ? pages.length + 1 : undefined;
     },
     select: data => data.pages.flatMap(page => page.posts),
   });
-
-
 
   const { ref, inView } = useInView();
 
