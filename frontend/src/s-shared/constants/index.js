@@ -48,9 +48,9 @@ export const categories = [
   },
   {
     id: 5,
-    title: 'SEO',
-    selector: 'SEO',
-    url: "/posts?category=SEO",
+    title: 'SearchEngine',
+    selector: 'SearchEngine',
+    url: "/posts?category=SearchEngine",
   },
   {
     id: 6,
