@@ -6,7 +6,22 @@ export const fetchPosts = async () => {
 
 let postLimit = 4;
 
-export const fetchInfinityPosts = async (pageParam) => {
-  const res = await fetch(`${import.meta.env.VITE_API_URL}/posts?page=${pageParam}&limit=${postLimit}`);
+export const fetchInfinityPosts = async (pageParam, searchParams) => {
+  
+  const searchParamsQuery = Object.fromEntries([...searchParams]);
+  console.log('searchParamsQuery', searchParamsQuery)
+  
+  const url = new URL(`${import.meta.env.VITE_API_URL}/posts`);
+  
+  const params = { 
+    page: pageParam, 
+    limit: postLimit, 
+    ...searchParamsQuery 
+  };
+  
+  Object.entries(params).forEach(([key, value]) => url.searchParams.append(key, value));
+  console.log('URL', url.searchParams.toString());
+  
+  const res = await fetch(url.toString());
   return await res.json();
 };
