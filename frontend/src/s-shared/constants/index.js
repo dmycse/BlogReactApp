@@ -11,8 +11,8 @@ export const navItems = [
   },
   {
     id: 3,
-    title: "Most Popular",
-    url: "/most-popular",
+    title: "Popular",
+    url: "/popular",
   },
   {
     id: 4,
@@ -30,33 +30,33 @@ export const categories = [
   },
   {
     id: 2,
-    title: 'Web Design',
-    selector: 'Web Design',
-    url: "/posts?cat=web-design",
+    title: 'WebDesign',
+    selector: 'WebDesign',
+    url: "/posts?category=WebDesign",
   },
   {
     id: 3,
     title: 'Development',
     selector: 'Development',
-    url: "/posts?cat=development",
+    url: "/posts?category=Development",
   },
   {
     id: 4,
     title: 'Databases',
     selector: 'Databases',
-    url: "/posts?cat=databases",
+    url: "/posts?category=Databases",
   },
   {
     id: 5,
     title: 'SEO',
     selector: 'SEO',
-    url: "/posts?cat=seo",
+    url: "/posts?category=SEO",
   },
   {
     id: 6,
     title: 'Marketing',
     value: 'Marketing',
-    url: "/posts?cat=marketing",
+    url: "/posts?category=Marketing",
   },
 ];
 
