@@ -16,7 +16,7 @@ export const PostItem = ({ post }) => {
           />)
         }
       </div>
-      <div className="mb-1 sm:mb-6 min-h-2 sm:h-14 max-sm:text-lg text-xl cursor-pointer">
+      <div className="mb-1 sm:mb-6 min-h-2 sm:h-fit md:h-14 max-sm:text-lg text-xl cursor-pointer">
         <Link 
           to={`/posts/${post.slug}`}
           className="font-semibold">
