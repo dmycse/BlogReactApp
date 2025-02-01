@@ -2,7 +2,7 @@ import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { fetchFeaturePost } from '@/s-shared/api/posts/fetchFeaturePost';
 import { toast } from 'react-toastify';
 
-export const useFuturePost = (getToken, postId, postSlug) => {
+export const useFuturedPost = (getToken, postId, postSlug) => {
 
   const queryClient = useQueryClient();
 
