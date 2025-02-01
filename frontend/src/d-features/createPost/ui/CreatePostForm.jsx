@@ -1,6 +1,6 @@
 import { useMediaContent } from '../lib/useMediaContent';
 import { useCreatePost } from '../lib/useCreatePost';
-import { UploadMedia } from '@/s-shared/ui/UploadMedia';
+import { UploadMedia } from '@/s-shared/ui/uploadMedia';
 import { categories } from '@/s-shared/constants';
 
 import ReactQuill from 'react-quill-new';
