@@ -7,9 +7,9 @@ export const PostDetails = ({ post }) => {
   return (
     <aside className="px-4 max-w-72 h-max sticky top-4">
       <h2 className="mb-4 text-sm font-medium">Author</h2>
-      <div className="mb-2 flex items-center gap-6">
+      <div className="mb-2 flex items-center gap-4">
         <img 
-          src={post.user?.img || '/avatar.png'} 
+          src={post.user?.img || '/src/s-shared/assets/images/no_avatar.png'} 
           alt="user"
           width={28}
           height={28} 
@@ -21,8 +21,8 @@ export const PostDetails = ({ post }) => {
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt, saepe?
       </p>
       <div className="flex gap-2">
-        <Link to=''><img src="/facebook.svg" alt="facebook" width={24} /></Link>
-        <Link to=''><img src="/instagram.svg" alt="facebook" width={24} /></Link>
+        <Link to=''><img src="/src/s-shared/assets/svg/facebook.svg" alt="facebook" width={24} /></Link>
+        <Link to=''><img src="/src/s-shared/assets/svg/instagram.svg" alt="facebook" width={24} /></Link>
       </div>
       <PostActions post={post} />
       <h2 className="mt-4 mb-2 text-sm font-medium">Categories</h2>
