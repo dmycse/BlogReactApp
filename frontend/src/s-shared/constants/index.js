@@ -89,7 +89,7 @@ export const categories = [
   {
     id: 6,
     title: 'Marketing',
-    value: 'Marketing',
+    selector: 'Marketing',
     url: "/posts?category=Marketing",
   },
 ];
