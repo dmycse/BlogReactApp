@@ -16,10 +16,14 @@ export const MobileView = () => {
       </button>
       <nav 
         className={`pt-10 w-full h-screen bg-purple-200 
-                    absolute top-16 ${openMobileMenu ? "right-0" : "-right-[100%]"}
+                    absolute top-16 ${openMobileMenu ? "right-0 z-10" : "-right-[100%]"}
                     transition-all ease-in-out`}
       >
-        <NavigationItems className="flex flex-col items-center gap-8 font-medium" />
+        <NavigationItems 
+          className="flex flex-col items-center gap-8 font-medium" 
+          mobileView={openMobileMenu}
+          setOpenMobileMenu={setOpenMobileMenu} 
+        />
       </nav>
     </div>
   )
