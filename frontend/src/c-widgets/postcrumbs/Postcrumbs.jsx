@@ -10,7 +10,7 @@ export const Postcrubms = ({author, category, date, visits}) => {
       {date && <span>{date}</span>}
       {visits && (
         <span className="ml-1 flex items-center gap-2">
-          <img src="/src/s-shared/assets/svg/eyes_looking.svg" alt="eye" width={25} />
+          <img src="/svg/eyes_looking.svg" alt="eye" width={25} />
           {visits}
         </span>
       )}
