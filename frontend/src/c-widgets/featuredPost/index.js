@@ -1,2 +1,2 @@
 export { FeaturedPostLV } from "./large-view/FeaturedPostLV";
-export { FeaturedPostSV } from "./small-view/FeaturedPostSV";
+export { FeaturedPostsSV } from "./small-view/FeaturedPostsSV";
