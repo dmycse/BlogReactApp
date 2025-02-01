@@ -17,10 +17,10 @@ export const CreatePostWidget = () => {
           />
           <text>
             <textPath href="#circlePath" startOffset="0%">
-              Write your story •
+              Write your story&#160;&#160;&#160;&#160;&#160;•
             </textPath>
             <textPath href="#circlePath" startOffset="50%">
-              Share your idea •
+              Share your idea&#160;&#160;&#160;&#160;&#160;•
             </textPath>
           </text>
         </svg>
