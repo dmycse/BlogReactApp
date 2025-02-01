@@ -18,7 +18,7 @@ export const PostActions = ({ post }) => {
   const isAdmin = user?.publicMetadata?.role === 'admin';
   
   const { savedPosts, error, isLoading } = useSavedPosts(getToken);
-  const isSaved = savedPosts?.some(postId => postId === post._id) || false;
+  const isSaved = savedPosts ? savedPosts.some(postId => postId === post._id) : false;
  
   const { savePost, isSavePending, postSavingError} = useSavePost(getToken, post._id);
   const { removePost, isRemovePending, postRemovingError } = useRemovePost(getToken, post._id);
