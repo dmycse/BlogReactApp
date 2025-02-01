@@ -1,9 +1,9 @@
 
 
-export const DeleteButton = ({width, height, onDeleteSubmit, disabled, children}) => {
+export const DeleteButton = ({width, height, onDeleteSubmit, disabled, className,children}) => {
   return (
     <button
-      className="py-1 flex items-center gap-2 text-sm cursor-pointer hover:text-red-700"
+      className={`py-1 flex items-center gap-2 text-sm cursor-pointer hover:text-red-700 ${className}`}
       disabled={disabled}
       onClick={onDeleteSubmit}
     >
