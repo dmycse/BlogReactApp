@@ -40,7 +40,7 @@ export const CreateComment = ({ postId }) => {
           </div>
         )}
       <form 
-        className="mb-8 w-full flex items-center justify-between gap-8"
+        className="mb-6 w-full flex items-center justify-between gap-8"
         onSubmit={handleSubmit} 
       >
         <textarea 

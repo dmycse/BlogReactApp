@@ -15,7 +15,7 @@ export const CommentItem = ({ postId, _id, user, description, createdAt }) => {
 
   return (
     <div key={_id} className="p-4 bg-slate-50 rounded-xl">
-      <div className="w-[30%] grid grid-cols-[repeat(3,minmax(30px,1fr))] justify-items-center items-center gap-3 lg:gap-6">
+      <div className="flex items-center gap-x-4 max-sm:gap-x-2">
         <div className='w-fit inline-flex items-center gap-2'>
           <img 
             src={user.img || noAvatarPlaceholderImage} 
