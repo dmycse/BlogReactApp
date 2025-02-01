@@ -58,7 +58,7 @@ export const mobileNavItems = [
 export const categories = [
   {
     id: 1,
-    title: 'General',
+    title: 'General Topics',
     selector: 'General',
     url: "/posts",
   },
