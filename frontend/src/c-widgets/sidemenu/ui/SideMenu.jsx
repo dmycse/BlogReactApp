@@ -63,7 +63,7 @@ export const SideMenu = () => {
             onClick={() => handleCategoryChange(category.selector)}
             className="underline cursor-pointer hover:text-purple-700" 
           >
-            {category.selector === 'general' ? 'All' : category.title}
+            {category.selector === 'General' ? 'All Posts' : category.title}
           </li>
         ))}
       </ul>
