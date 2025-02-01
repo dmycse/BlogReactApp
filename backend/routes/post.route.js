@@ -7,6 +7,7 @@ import {
   deletePost, 
   uploadAuth 
 } from "../controllers/post.controller.js";
+import countVisits from "../middlewares/countVisits.js";
 
 
 const router = Router();
@@ -14,7 +15,7 @@ const router = Router();
 router.get("/upload-auth", uploadAuth);
 
 router.get("/", getAllPosts);
-router.get("/:slug", getPost);
+router.get("/:slug", countVisits, getPost);
 router.post("/", createPost);
 router.patch("/feature", featurePost);
 router.delete("/:id", deletePost);

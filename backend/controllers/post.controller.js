@@ -16,11 +16,11 @@ import User from "../models/user.model.js";
 export const getAllPosts = async (req, res) => {
 
   const page = parseInt(req.query.page) || 1;
-  const limit = parseInt(req.query.limit) || 2;
+  const limit = parseInt(req.query.limit) || 10;
   const skip = (page - 1) * limit;
   
   const query = {};
-  console.log(req.query);
+  
   const {category, author, featured} = req.query;
   const searchQuery = req.query.search;
   const sortQuery = req.query.sort;
@@ -48,7 +48,6 @@ export const getAllPosts = async (req, res) => {
     query.isFeatured = true;
   }
   
-
   let sortObj = {createdAt: -1};
 
   if (sortQuery) {
@@ -70,7 +69,7 @@ export const getAllPosts = async (req, res) => {
         break;
     }
   }
-  console.log('query', query);
+
   const posts = await Post
     .find(query)
     .populate("user", "username")
