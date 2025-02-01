@@ -53,6 +53,7 @@ app.use('/', (req, res) => {
 })
 
 app.listen(PORT, () => {
-  connectDB();
+  // connectDB();
+  connectDB;
   console.log('\x1b[36m%s\x1b[0m', `Server is running. Port: ${PORT}`);
 });
