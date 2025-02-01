@@ -1,3 +1,6 @@
+export const homepageTitle = "Discover practical and innovative insights on web development";
+export const homepageSubTitle = "Enhance your skills with expert tips, modern tools, and best development practices daily";
+
 export const navItems = [
   {
     id: 1,
@@ -7,19 +10,48 @@ export const navItems = [
   {
     id: 2,
     title: "Trending",
-    url: "/trending",
+    url: "/",
   },
   {
     id: 3,
     title: "Popular",
-    url: "/popular",
+    url: "/",
   },
   {
     id: 4,
     title: "About",
-    url: "/about",
+    url: "/",
   },
 ];
+
+export const mobileNavItems = [
+  {
+    id: 1,
+    title: "Home",
+    url: "/",
+  },
+  {
+    id: 2,
+    title: "Trending",
+    url: "/",
+  },
+  {
+    id: 3,
+    title: "Popular",
+    url: "/",
+  },
+  {
+    id: 4,
+    title: "About",
+    url: "/",
+  },
+  {
+    id: 5,
+    title: "Create Post",
+    url: "/create-post",
+  },
+];
+
 
 export const categories = [
   {
@@ -65,28 +97,28 @@ export const featuredPosts = [
     id: 1,
     title: "Lorem ipsum dolor sit amet. consectetur adipisicing elit. ",
     category: "Web Design",
-    imageUrl: "/featured1.jpeg",
+    img: "/featured1.jpeg",
     url: "/posts/1"
   },
   {
     id: 2,
     title: "Lorem ipsum dolor sit amet. consectetur adipisicing elit.",
     category: "Marketing",
-    imageUrl: "/featured2.jpeg",
+    img: "/featured2.jpeg",
     url: "/posts/2"
   },
   {
     id: 3,
     title: "Lorem ipsum dolor sit amet. consectetur adipisicing elit.",
     category: "Development",
-    imageUrl: "/featured3.jpeg",
+    img: "/featured3.jpeg",
     url: "/posts/3"
   },
   {
     id: 4,
     title: "Lorem ipsum dolor sit amet. consectetur adipisicing elit.",
     category: "Databases",
-    imageUrl: "/featured4.jpeg",
+    img: "/featured4.jpeg",
     url: "/posts/4"
   }
 ];
