@@ -13,7 +13,7 @@ import { fetchPost } from '@/s-shared/api/posts/fetchPost';
 export const PostContent = () => {
 
   const { slug } = useParams();
-
+ 
   const { data, error, isLoading } = useQuery({
     queryKey: ['post', slug],
     queryFn: () => fetchPost(slug)
@@ -45,7 +45,8 @@ export const PostContent = () => {
           <Postcrubms 
             author={data.user.username} 
             category={data.category} 
-            date={new Date(data.createdAt).toLocaleDateString()} 
+            date={new Date(data.createdAt).toLocaleDateString()}
+            visits={data.visits} 
           />
           <p className="text-gray-500 font-medium">
             {data.description}
