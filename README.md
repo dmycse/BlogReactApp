@@ -6,7 +6,7 @@
       <span style="color: purple;">DevWoven</span> | Enhance your skills with expert tips
     </span>
   </h3>
-  <img src='/frontend/public/app_view.png' alt='app view' width="500px" />
+  <img src='/frontend/public/images/app_view.png' alt='app view' width="500px" />
   <br />
   <br />
   <br />
@@ -84,6 +84,7 @@ Frontend:
 * **[Git](https://git-scm.com/)**: Version Control
 * **[Vite](https://vite.dev)**: A dev server
 * **[Npm](https://www.npmjs.com/)**: Package manager
+* **[Vecel](https://vercel.com/)**: Backend and FrontEnd Deploy
 
 
 ### <a name="know">Good to know</a>
@@ -92,4 +93,4 @@ Frontend:
 
 
 ### <a name="web-link">Web-link</a>
-This repository contains the code corresponding to an in-depth app available on web-link: <a href="" target="_blank"><b>DevWoven</b></a>. 
+This repository contains the code corresponding to an in-depth app available on web-link: <a href="https://dev-woven-app.vercel.app" target="_blank"><b>DevWoven</b></a>. 
