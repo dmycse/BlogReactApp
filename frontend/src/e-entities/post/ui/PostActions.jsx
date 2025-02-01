@@ -1,10 +1,11 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useAuth, useUser } from "@clerk/clerk-react";
 import { useSavedPosts } from '../lib/useSavedPosts';
 import { useSavePost } from "../lib/useSavePost";
 import { useRemovePost } from '../lib/useRemovePost';
-import { useFuturePost } from '../lib/useFuturePost';
+import { useFuturedPost } from '../lib/useFuturedPost';
 import { DeleteButton } from "@/s-shared/ui/deleteButton/DeleteButton";
+import { LucideHam } from "lucide-react";
 
 
 export const PostActions = ({ post }) => {
@@ -12,15 +13,16 @@ export const PostActions = ({ post }) => {
   const { user } = useUser();
   const { getToken } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation()
 
   const isAdmin = user?.publicMetadata?.role === 'admin';
   
   const { savedPosts, error, isLoading } = useSavedPosts(getToken);
-  const isSaved = savedPosts?.some(postId => postId === post._id);
-  
+  const isSaved = savedPosts && savedPosts.some(postId => postId === post._id);
+
   const { savePost, isSavePending, postSavingError} = useSavePost(getToken, post._id);
   const { removePost, isRemovePending, postRemovingError } = useRemovePost(getToken, post._id);
-  const { futurePost, isFuturePending, postFutureError } = useFuturePost(getToken, post._id, post.slug);
+  const { futurePost, isFuturePending, postFutureError } = useFuturedPost(getToken, post._id, post.slug);
 
   let submitSavePost = () => {
     if (!user) {
@@ -32,11 +34,18 @@ export const PostActions = ({ post }) => {
 
   return (
     <div>
-      <h2 className="mt-4 mb-2 text-sm font-medium">Actions</h2>
+      <h2 className="mt-2 mb-2 text-sm font-medium">{!error && !isLoading &&'Actions'}</h2>
       {isLoading 
-        ? 'Loading...' 
+        ? <span className="text-sm">Actions are loading...</span>
         : error
-          ?  'Saved post fetching failed!'
+          ?  <Link 
+                to='/login'
+                state={{ from: location.pathname }} 
+                className="text-sm text-red-400"
+              >
+                <span className="text-blue-800 font-semibold">Login</span>
+                <span className="text-red-400"> to save or delete post </span>
+              </Link>
           : (
             <button
               className="py-1 flex items-center gap-2 text-sm cursor-pointer"
