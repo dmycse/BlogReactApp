@@ -60,7 +60,7 @@ export const categories = [
     id: 1,
     title: 'General Topics',
     selector: 'General',
-    url: "/posts",
+    url: "/posts?category=General",
   },
   {
     id: 2,
