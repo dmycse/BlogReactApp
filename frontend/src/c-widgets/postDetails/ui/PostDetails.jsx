@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { PostActions } from "@/e-entities/post";
 import { SearchInput } from "@/s-shared/ui/searchInput/SearchInput";
-import { categories } from "@/s-shared/constants";
+import { categories, noAvatarPlaceholderImage } from "@/s-shared/constants";
 
 export const PostDetails = ({ post }) => {
   return (
@@ -9,7 +9,7 @@ export const PostDetails = ({ post }) => {
       <h2 className="mb-4 text-sm font-medium">Author</h2>
       <div className="mb-2 flex items-center gap-4">
         <img 
-          src={post.user?.img || '/src/s-shared/assets/images/no_avatar.png'} 
+          src={post.user?.img || noAvatarPlaceholderImage} 
           alt="user"
           width={28}
           height={28} 

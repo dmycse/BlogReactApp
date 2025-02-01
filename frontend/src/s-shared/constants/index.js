@@ -1,6 +1,8 @@
 export const homepageTitle = "Discover practical and innovative insights on web development";
 export const homepageSubTitle = "Enhance your skills with expert tips, modern tools, and best development practices daily";
 
+export const noAvatarPlaceholderImage = '/src/s-shared/assets/images/no_avatar.png';
+
 export const navItems = [
   {
     id: 1,
