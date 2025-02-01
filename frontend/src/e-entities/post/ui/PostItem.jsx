@@ -10,8 +10,6 @@ export const PostItem = ({ post }) => {
           <CustomImage 
             src={post.img}
             alt="post image" 
-            //width={350} 
-            // height={300}
             className="w-full h-56 rounded-xl object-cover"
           />)
         }
@@ -26,7 +24,7 @@ export const PostItem = ({ post }) => {
       <Postcrubms 
         author={post.user.username} 
         category={post.category} 
-        time={new Date(post.createdAt).toLocaleDateString()} 
+        date={new Date(post.createdAt).toLocaleDateString()}
       />
       <div className="pb-2 flex-1 flex flex-col gap-2">
         <p className="flex-1">
