@@ -48,6 +48,10 @@ app.use((err, req, res, next) => {
 
 const PORT = process.env.PORT || 3000;
 
+app.use('/', (req, res) => {
+  res.send('Server is running');
+})
+
 app.listen(PORT, () => {
   connectDB();
   console.log('\x1b[36m%s\x1b[0m', `Server is running. Port: ${PORT}`);
