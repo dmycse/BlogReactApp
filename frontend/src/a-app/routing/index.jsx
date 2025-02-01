@@ -6,17 +6,7 @@ import { CreatePostPage } from "@/b-pages/createPostPage";
 import { PostsListPage } from "@/b-pages/postsListPage";
 import { PostPage } from "@/b-pages/postPage";
 import { LoginPage } from "@/b-pages/loginPage";
-
-// import { 
- 
-//   PostsListPage, 
-//   SinglePostPage, 
-//   CreatePostPage, 
-
-//   LoginPage, 
-//   RegisterUserPage, 
-//   AboutPage
-// } from "@/pages";
+import { RegisterPage } from "@/b-pages/registerPage/RegisterPage";
 
 
 export const router = createBrowserRouter([
@@ -43,14 +33,10 @@ export const router = createBrowserRouter([
         path: "/login",
         element: <LoginPage />,
       },
-      // {
-      //   path: "/register",
-      //   element: <RegisterUserPage />,
-      // },
-      // {
-      //   path: "/about",
-      //   element: <AboutPage />,
-      // },
+      {
+        path: "/register",
+        element: <RegisterPage />,
+      }
     ],
   },
 ]);
