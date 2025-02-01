@@ -6,7 +6,7 @@ const router = Router();
 
 router.post(
   "/clerk", 
-  bodyParser.raw({ type: 'application/json' }), 
+  bodyParser.raw({ type: 'application/json' }),
   clerkWebhook
 );
 

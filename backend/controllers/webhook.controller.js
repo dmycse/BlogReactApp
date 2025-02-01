@@ -4,7 +4,7 @@ import User from "../models/user.model.js";
 export const clerkWebhook = async (req, res) => {
 
   const WEBHOOK_SECRET = process.env.CLERK_WEBHOOK_SECRET;
-
+ 
   if (!WEBHOOK_SECRET) {
     throw new Error("Error: webhook secret needed");
   }
@@ -12,21 +12,24 @@ export const clerkWebhook = async (req, res) => {
   const payload = req.body;
   const headers = req.headers;
 
+  
   const wh = new Webhook(WEBHOOK_SECRET);
-
   let event;
-
+  
   try {
       event = wh.verify(payload, headers);
+      console.log("Webhook verified:", event)
   } catch (err) {
       console.error('Error: Could not verify webhook:', err)
       res.status(400).json({
-        message: "Webhook veryfication failed",
+        message: "Webhook verification failed!",
       });
-
   }
 
-
+  if (event.type === 'user.deleted') {
+    await User.findOneAndDelete({clerkUserId: event.data.id});
+  }      
+  
   if (event.type === 'user.created') {
     const newUser = new User({
       clerkUserId: event.data.id,
