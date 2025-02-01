@@ -88,7 +88,7 @@ Frontend:
 
 ### <a name="know">Good to know</a>
 * **Website is adaptive** for desktop and mobile displays
-* **Website has been created** by using of Featured Slice Design architectural approach
+* **Website has been created** by using of Feature Sliced Design architectural approach
 
 
 ### <a name="web-link">Web-link</a>
