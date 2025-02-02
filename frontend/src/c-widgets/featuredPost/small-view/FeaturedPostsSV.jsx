@@ -4,8 +4,8 @@ import { Postcrubms } from "@/c-widgets/postcrumbs/Postcrumbs";
 
 export const FeaturedPostsSV = ({ post, number }) => {
   return (
-    <div className="flex flex-row md:flex-col lg:flex-row justify-between gap-4">
-      <div className="w-1/3 md:w-full md:h-44 lg:h-full lg:w-1/3 aspect-video">
+    <div className="flex flex-row gap-4">
+      <div className="w-1/3 aspect-video">
         {post.img &&
           <CustomImage 
             src={post.img}
@@ -14,7 +14,7 @@ export const FeaturedPostsSV = ({ post, number }) => {
           />
         }
       </div>
-      <div className="w-2/3 md:w-full lg:w-2/3flex flex-col gap-3">
+      <div className="w-2/3 flex flex-col gap-1">
         <div className="mb-2 flex items-center gap-2 text-sm lg:text-base">
           <h1 className="font-semibold max-sm:text-sm text-base lg:text-lg text-purple-800">0{number}</h1>
           <Postcrubms 

@@ -25,14 +25,13 @@ export const Homepage = () => {
         : !newestPosts || error
             ? <span>Something went wrong! {error.message}</span>
             : (
-              <section className="mt-8 w-full grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8">
-                <div className="md:mb-8 lg:mb-2 xl:h-full flex flex-col gap-4">
+              <section className="mt-8 flex flex-col lg:flex-row gap-8 ">
+                <div className="md:mb-8 lg:mb-2 flex flex-col gap-4">
                   {newestPosts?.posts?.slice(0, 1).map((post, index) => <FeaturedPostLV key={post._id} post={post} number={index+1} />)}
                 </div>
                 <div 
-                  className="mb-8 lg:h-full grid grid-cols-1 grid-rows-3 md:grid-cols-3 md:grid-rows-1
-                            lg:grid-rows-3 lg:grid-cols-1 gap-4 lg:gap-8"
-                >
+                  className="mb-3 flex flex-col justify-between gap-4"
+                >  
                   {newestPosts?.posts?.slice(1,4).map((post, index) => <FeaturedPostsSV key={post._id} post={post} number={index+2} />)}
                 </div>
               </section>
